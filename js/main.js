@@ -12,13 +12,16 @@ function getMovies(searchText) {
         let movies = response.data.Search;
         let output = '';
 
+
         $.each(movies, (index, movie) => {
+          console.log(movie);
             output += `
                 <div class="col-md-3" style="padding-bottom: 30px;">
-                    <div class="well text-center" style="background-color: #F5F5F5;">
+                    <div class="well text-center" style="background-color: #F5F5F5; height: auto; padding-bottom: 10px;">
                         <img src="${movie.Poster}" onerror="this.src='images/no-image-found.png'" alt="" class="img-thumbnail">
-                        <h5 class="movie-title">${movie.Title}</h5>
-                        <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary view-movie-btn" href="#">Movie Details</a>
+                        <h5 class="movie-title">${movie.Title} (${movie.Year})</h5>
+
+                        <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-outline-dark view-movie-btn" href="#">View More Info</a>
                     </div>
                 </div>
             `;
@@ -68,8 +71,8 @@ function getMovie(){
             <h3>Plot</h3>
             ${movie.Plot}
             <hr>
-            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="index.html" class="btn btn-default">Go Back To Search</a>
+            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-outline-dark">View IMDB</a>
+            <a href="index.html" class="btn btn-outline-secondary">Go Back To Search</a>
           </div>
         </div>
       `;
