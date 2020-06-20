@@ -1,0 +1,27 @@
+#movies img, #movie img{
+    width: 100%;
+}
+
+@media(min-width: 960px){
+
+    #movies .col-md-3 .well{
+        height: 390px;
+    }
+
+    #movies .col-md-3 img{
+        height: 240px;
+    }
+}
+
+.movie-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: table-cell;
+    height: 100px;
+    margin-bottom: 10px;
+    margin-top: 10px;    
+}
+
+.view-movie-btn{
+    background-color: red;
+}
